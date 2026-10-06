@@ -1,0 +1,572 @@
+[
+    {
+        "created_at": "2026-10-02T13:12:13.597854",
+        "dataset_name": "GSM6957625_NSCLC_KRAS_6_sn_counts.csv.gz",
+        "cells": 5791,
+        "inflamed": 1448,
+        "immune_excluded": 1448,
+        "accuracy": 0.696551724137931,
+        "precision": 0.7050359712230215,
+        "recall": 0.6758620689655173,
+        "f1_score": 0.0,
+        "ai_interpretation": "- **Immune‑state distribution**: The cohort is split evenly into immune‑excluded and inflamed states (≈25 % each) with a larger intermediate group (≈50 %).  \n- **Score pattern**: Mean T‑cell and PD‑L1/myeloid scores are near zero, and the immune‑state index is slightly negative, indicating a modest bias toward the intermediate/immune‑excluded phenotype.  \n- **Key model features**: The strongest negative coefficient is C1QA (immune‑excluded), while several genes with positive coefficients (CHGA, KIF11, CD3E, IGFBP6, ANKRD37, CCDC102B, NEURL2) drive the inflamed class. LINC00638 and LINC01208 also contribute to the excluded pattern.  \n- **Classifier performance**: Accuracy ~0.70, precision ~0.71, recall ~0.68, and F1 ~0.69, reflecting moderate but not high discriminative ability across the three immune states.  \n- **Limitation**: The model relies on gene expression alone and cannot capture spatial or functional aspects of the tumor microenvironment that may influence immune state classification.",
+        "feature_importance": [
+            {
+                "Gene": "C1QA",
+                "Coefficient": -4.613566875457764,
+                "Importance": 4.613566875457764
+            },
+            {
+                "Gene": "CHGA",
+                "Coefficient": 1.1985279321670532,
+                "Importance": 1.1985279321670532
+            },
+            {
+                "Gene": "KIF11",
+                "Coefficient": 1.142582893371582,
+                "Importance": 1.142582893371582
+            },
+            {
+                "Gene": "CD3E",
+                "Coefficient": 1.0963826179504395,
+                "Importance": 1.0963826179504395
+            },
+            {
+                "Gene": "IGFBP6",
+                "Coefficient": 1.0673190355300903,
+                "Importance": 1.0673190355300903
+            },
+            {
+                "Gene": "ANKRD37",
+                "Coefficient": 1.0622502565383911,
+                "Importance": 1.0622502565383911
+            },
+            {
+                "Gene": "CCDC102B",
+                "Coefficient": 1.0601295232772827,
+                "Importance": 1.0601295232772827
+            },
+            {
+                "Gene": "NEURL2",
+                "Coefficient": 1.047844409942627,
+                "Importance": 1.047844409942627
+            },
+            {
+                "Gene": "LINC00638",
+                "Coefficient": -1.0411628484725952,
+                "Importance": 1.0411628484725952
+            },
+            {
+                "Gene": "LINC01208",
+                "Coefficient": -1.0103553533554077,
+                "Importance": 1.0103553533554077
+            },
+            {
+                "Gene": "MTCP1",
+                "Coefficient": 1.0065487623214722,
+                "Importance": 1.0065487623214722
+            },
+            {
+                "Gene": "LRATD2",
+                "Coefficient": 0.9959692358970642,
+                "Importance": 0.9959692358970642
+            },
+            {
+                "Gene": "KLRG1",
+                "Coefficient": -0.9888097643852234,
+                "Importance": 0.9888097643852234
+            },
+            {
+                "Gene": "MALL",
+                "Coefficient": -0.979340136051178,
+                "Importance": 0.979340136051178
+            },
+            {
+                "Gene": "LINC00472",
+                "Coefficient": 0.9734053015708923,
+                "Importance": 0.9734053015708923
+            },
+            {
+                "Gene": "AFAP1L2",
+                "Coefficient": 0.9711160659790039,
+                "Importance": 0.9711160659790039
+            },
+            {
+                "Gene": "GRIA1",
+                "Coefficient": 0.9691566228866577,
+                "Importance": 0.9691566228866577
+            },
+            {
+                "Gene": "FREM2",
+                "Coefficient": 0.9345102310180664,
+                "Importance": 0.9345102310180664
+            },
+            {
+                "Gene": "CXCL12",
+                "Coefficient": 0.9202614426612854,
+                "Importance": 0.9202614426612854
+            },
+            {
+                "Gene": "HSPG2",
+                "Coefficient": 0.9162249565124512,
+                "Importance": 0.9162249565124512
+            }
+        ]
+    },
+    {
+        "created_at": "2026-10-02T03:49:42.392151",
+        "dataset_name": "GSM6957625_NSCLC_KRAS_6_sn_counts.csv.gz",
+        "cells": 5791,
+        "inflamed": 1448,
+        "immune_excluded": 1448,
+        "accuracy": 0.696551724137931,
+        "precision": 0.7050359712230215,
+        "recall": 0.6758620689655173,
+        "f1_score": 0.0,
+        "ai_interpretation": "- **Immune‑state distribution**: The dataset is evenly split among immune‑excluded (≈25 %), intermediate (≈50 %), and inflamed (≈25 %) states, suggesting a balanced representation of tumor immune microenvironments.  \n- **Immune‑cell activity**: Mean T‑cell score is near zero, while mean PD‑L1/myeloid score is modestly positive, indicating low overall T‑cell infiltration but some PD‑L1 expression by myeloid cells. The negative immune‑state index aligns with the higher proportion of excluded and intermediate samples.  \n- **Key predictive genes**: The strongest negative coefficient is C1QA (immune‑excluded), followed by two long‑noncoding RNAs (LINC00638, LINC01208) also linked to exclusion. Positive coefficients for CHGA, KIF11, CD3E, IGFBP6, ANKRD37, CCDC102B, and NEURL2 drive the inflamed class, with CD3E and CHGA among the top contributors.  \n- **Classifier performance**: Accuracy, precision, recall, and F1 all hover around 0.69–0.70, indicating moderate discriminative ability but leaving room for improvement in distinguishing the three immune states.  \n- **Scientific limitation**: The model’s feature importances reflect statistical association rather than causal influence; thus, genes identified as important cannot be interpreted as drivers of immune‑state phenotypes.",
+        "feature_importance": [
+            {
+                "Gene": "C1QA",
+                "Coefficient": -4.613566875457764,
+                "Importance": 4.613566875457764
+            },
+            {
+                "Gene": "CHGA",
+                "Coefficient": 1.1985279321670532,
+                "Importance": 1.1985279321670532
+            },
+            {
+                "Gene": "KIF11",
+                "Coefficient": 1.142582893371582,
+                "Importance": 1.142582893371582
+            },
+            {
+                "Gene": "CD3E",
+                "Coefficient": 1.0963826179504395,
+                "Importance": 1.0963826179504395
+            },
+            {
+                "Gene": "IGFBP6",
+                "Coefficient": 1.0673190355300903,
+                "Importance": 1.0673190355300903
+            },
+            {
+                "Gene": "ANKRD37",
+                "Coefficient": 1.0622502565383911,
+                "Importance": 1.0622502565383911
+            },
+            {
+                "Gene": "CCDC102B",
+                "Coefficient": 1.0601295232772827,
+                "Importance": 1.0601295232772827
+            },
+            {
+                "Gene": "NEURL2",
+                "Coefficient": 1.047844409942627,
+                "Importance": 1.047844409942627
+            },
+            {
+                "Gene": "LINC00638",
+                "Coefficient": -1.0411628484725952,
+                "Importance": 1.0411628484725952
+            },
+            {
+                "Gene": "LINC01208",
+                "Coefficient": -1.0103553533554077,
+                "Importance": 1.0103553533554077
+            },
+            {
+                "Gene": "MTCP1",
+                "Coefficient": 1.0065487623214722,
+                "Importance": 1.0065487623214722
+            },
+            {
+                "Gene": "LRATD2",
+                "Coefficient": 0.9959692358970642,
+                "Importance": 0.9959692358970642
+            },
+            {
+                "Gene": "KLRG1",
+                "Coefficient": -0.9888097643852234,
+                "Importance": 0.9888097643852234
+            },
+            {
+                "Gene": "MALL",
+                "Coefficient": -0.979340136051178,
+                "Importance": 0.979340136051178
+            },
+            {
+                "Gene": "LINC00472",
+                "Coefficient": 0.9734053015708923,
+                "Importance": 0.9734053015708923
+            },
+            {
+                "Gene": "AFAP1L2",
+                "Coefficient": 0.9711160659790039,
+                "Importance": 0.9711160659790039
+            },
+            {
+                "Gene": "GRIA1",
+                "Coefficient": 0.9691566228866577,
+                "Importance": 0.9691566228866577
+            },
+            {
+                "Gene": "FREM2",
+                "Coefficient": 0.9345102310180664,
+                "Importance": 0.9345102310180664
+            },
+            {
+                "Gene": "CXCL12",
+                "Coefficient": 0.9202614426612854,
+                "Importance": 0.9202614426612854
+            },
+            {
+                "Gene": "HSPG2",
+                "Coefficient": 0.9162249565124512,
+                "Importance": 0.9162249565124512
+            }
+        ]
+    },
+    {
+        "created_at": "2026-09-27T12:25:22.701912",
+        "dataset_name": "GSM6957625_NSCLC_KRAS_6_sn_counts.csv.gz",
+        "cells": 5791,
+        "inflamed": 1448,
+        "immune_excluded": 1448,
+        "accuracy": 0.696551724137931,
+        "precision": 0.7050359712230215,
+        "recall": 0.6758620689655173,
+        "f1_score": 0.0,
+        "ai_interpretation": "- **Immune‑state distribution**: The cohort is evenly split into immune‑excluded and inflamed states (≈25 % each) with the remaining 50 % classified as intermediate, indicating a heterogeneous tumor microenvironment.  \n- **T‑cell and PD‑L1/myeloid activity**: Mean T‑cell score is near zero (0.0003) while mean PD‑L1/myeloid score is modest (0.008), suggesting low overall adaptive immune infiltration and limited myeloid‑associated checkpoint expression across the dataset.  \n- **Key predictive genes**: The strongest negative association is with **C1QA** (coefficient –4.61, direction “Immune‑Excluded”), while several positively weighted genes (e.g., **CHGA**, **KIF11**, **CD3E**) drive the “Inflamed” classification, reflecting a mix of immune‑activation and cell‑cycle signatures.  \n- **Classifier performance**: Accuracy ≈ 0.70, precision ≈ 0.71, recall ≈ 0.68, and F1 ≈ 0.69, indicating moderate discrimination among the three immune states but leaving room for improvement.  \n- **Scientific limitation**: The model relies on a limited set of highly weighted genes; without external validation, it is unclear whether these associations generalize beyond this specific cohort or represent batch‑specific artifacts.",
+        "feature_importance": [
+            {
+                "Gene": "C1QA",
+                "Coefficient": -4.613566875457764,
+                "Importance": 4.613566875457764
+            },
+            {
+                "Gene": "CHGA",
+                "Coefficient": 1.1985279321670532,
+                "Importance": 1.1985279321670532
+            },
+            {
+                "Gene": "KIF11",
+                "Coefficient": 1.142582893371582,
+                "Importance": 1.142582893371582
+            },
+            {
+                "Gene": "CD3E",
+                "Coefficient": 1.0963826179504395,
+                "Importance": 1.0963826179504395
+            },
+            {
+                "Gene": "IGFBP6",
+                "Coefficient": 1.0673190355300903,
+                "Importance": 1.0673190355300903
+            },
+            {
+                "Gene": "ANKRD37",
+                "Coefficient": 1.0622502565383911,
+                "Importance": 1.0622502565383911
+            },
+            {
+                "Gene": "CCDC102B",
+                "Coefficient": 1.0601295232772827,
+                "Importance": 1.0601295232772827
+            },
+            {
+                "Gene": "NEURL2",
+                "Coefficient": 1.047844409942627,
+                "Importance": 1.047844409942627
+            },
+            {
+                "Gene": "LINC00638",
+                "Coefficient": -1.0411628484725952,
+                "Importance": 1.0411628484725952
+            },
+            {
+                "Gene": "LINC01208",
+                "Coefficient": -1.0103553533554077,
+                "Importance": 1.0103553533554077
+            },
+            {
+                "Gene": "MTCP1",
+                "Coefficient": 1.0065487623214722,
+                "Importance": 1.0065487623214722
+            },
+            {
+                "Gene": "LRATD2",
+                "Coefficient": 0.9959692358970642,
+                "Importance": 0.9959692358970642
+            },
+            {
+                "Gene": "KLRG1",
+                "Coefficient": -0.9888097643852234,
+                "Importance": 0.9888097643852234
+            },
+            {
+                "Gene": "MALL",
+                "Coefficient": -0.979340136051178,
+                "Importance": 0.979340136051178
+            },
+            {
+                "Gene": "LINC00472",
+                "Coefficient": 0.9734053015708923,
+                "Importance": 0.9734053015708923
+            },
+            {
+                "Gene": "AFAP1L2",
+                "Coefficient": 0.9711160659790039,
+                "Importance": 0.9711160659790039
+            },
+            {
+                "Gene": "GRIA1",
+                "Coefficient": 0.9691566228866577,
+                "Importance": 0.9691566228866577
+            },
+            {
+                "Gene": "FREM2",
+                "Coefficient": 0.9345102310180664,
+                "Importance": 0.9345102310180664
+            },
+            {
+                "Gene": "CXCL12",
+                "Coefficient": 0.9202614426612854,
+                "Importance": 0.9202614426612854
+            },
+            {
+                "Gene": "HSPG2",
+                "Coefficient": 0.9162249565124512,
+                "Importance": 0.9162249565124512
+            }
+        ]
+    },
+    {
+        "created_at": "2026-09-27T11:04:14.055454",
+        "dataset_name": "GSM6957625_NSCLC_KRAS_6_sn_counts.csv.gz",
+        "cells": 5791,
+        "inflamed": 1448,
+        "immune_excluded": 1448,
+        "accuracy": 0.696551724137931,
+        "precision": 0.7050359712230215,
+        "recall": 0.6758620689655173,
+        "f1_score": 0.0,
+        "ai_interpretation": null,
+        "feature_importance": [
+            {
+                "Gene": "C1QA",
+                "Coefficient": -4.613566875457764,
+                "Importance": 4.613566875457764
+            },
+            {
+                "Gene": "CHGA",
+                "Coefficient": 1.1985279321670532,
+                "Importance": 1.1985279321670532
+            },
+            {
+                "Gene": "KIF11",
+                "Coefficient": 1.142582893371582,
+                "Importance": 1.142582893371582
+            },
+            {
+                "Gene": "CD3E",
+                "Coefficient": 1.0963826179504395,
+                "Importance": 1.0963826179504395
+            },
+            {
+                "Gene": "IGFBP6",
+                "Coefficient": 1.0673190355300903,
+                "Importance": 1.0673190355300903
+            },
+            {
+                "Gene": "ANKRD37",
+                "Coefficient": 1.0622502565383911,
+                "Importance": 1.0622502565383911
+            },
+            {
+                "Gene": "CCDC102B",
+                "Coefficient": 1.0601295232772827,
+                "Importance": 1.0601295232772827
+            },
+            {
+                "Gene": "NEURL2",
+                "Coefficient": 1.047844409942627,
+                "Importance": 1.047844409942627
+            },
+            {
+                "Gene": "LINC00638",
+                "Coefficient": -1.0411628484725952,
+                "Importance": 1.0411628484725952
+            },
+            {
+                "Gene": "LINC01208",
+                "Coefficient": -1.0103553533554077,
+                "Importance": 1.0103553533554077
+            },
+            {
+                "Gene": "MTCP1",
+                "Coefficient": 1.0065487623214722,
+                "Importance": 1.0065487623214722
+            },
+            {
+                "Gene": "LRATD2",
+                "Coefficient": 0.9959692358970642,
+                "Importance": 0.9959692358970642
+            },
+            {
+                "Gene": "KLRG1",
+                "Coefficient": -0.9888097643852234,
+                "Importance": 0.9888097643852234
+            },
+            {
+                "Gene": "MALL",
+                "Coefficient": -0.979340136051178,
+                "Importance": 0.979340136051178
+            },
+            {
+                "Gene": "LINC00472",
+                "Coefficient": 0.9734053015708923,
+                "Importance": 0.9734053015708923
+            },
+            {
+                "Gene": "AFAP1L2",
+                "Coefficient": 0.9711160659790039,
+                "Importance": 0.9711160659790039
+            },
+            {
+                "Gene": "GRIA1",
+                "Coefficient": 0.9691566228866577,
+                "Importance": 0.9691566228866577
+            },
+            {
+                "Gene": "FREM2",
+                "Coefficient": 0.9345102310180664,
+                "Importance": 0.9345102310180664
+            },
+            {
+                "Gene": "CXCL12",
+                "Coefficient": 0.9202614426612854,
+                "Importance": 0.9202614426612854
+            },
+            {
+                "Gene": "HSPG2",
+                "Coefficient": 0.9162249565124512,
+                "Importance": 0.9162249565124512
+            }
+        ]
+    },
+    {
+        "created_at": "2026-09-27T10:01:12.328895",
+        "dataset_name": "GSM6957625_NSCLC_KRAS_6_sn_counts.csv.gz",
+        "cells": 5791,
+        "inflamed": 1448,
+        "immune_excluded": 1448,
+        "accuracy": 0.696551724137931,
+        "precision": 0.7050359712230215,
+        "recall": 0.6758620689655173,
+        "f1_score": 0.0,
+        "ai_interpretation": null,
+        "feature_importance": [
+            {
+                "Gene": "C1QA",
+                "Coefficient": -4.613566875457764,
+                "Importance": 4.613566875457764
+            },
+            {
+                "Gene": "CHGA",
+                "Coefficient": 1.1985279321670532,
+                "Importance": 1.1985279321670532
+            },
+            {
+                "Gene": "KIF11",
+                "Coefficient": 1.142582893371582,
+                "Importance": 1.142582893371582
+            },
+            {
+                "Gene": "CD3E",
+                "Coefficient": 1.0963826179504395,
+                "Importance": 1.0963826179504395
+            },
+            {
+                "Gene": "IGFBP6",
+                "Coefficient": 1.0673190355300903,
+                "Importance": 1.0673190355300903
+            },
+            {
+                "Gene": "ANKRD37",
+                "Coefficient": 1.0622502565383911,
+                "Importance": 1.0622502565383911
+            },
+            {
+                "Gene": "CCDC102B",
+                "Coefficient": 1.0601295232772827,
+                "Importance": 1.0601295232772827
+            },
+            {
+                "Gene": "NEURL2",
+                "Coefficient": 1.047844409942627,
+                "Importance": 1.047844409942627
+            },
+            {
+                "Gene": "LINC00638",
+                "Coefficient": -1.0411628484725952,
+                "Importance": 1.0411628484725952
+            },
+            {
+                "Gene": "LINC01208",
+                "Coefficient": -1.0103553533554077,
+                "Importance": 1.0103553533554077
+            },
+            {
+                "Gene": "MTCP1",
+                "Coefficient": 1.0065487623214722,
+                "Importance": 1.0065487623214722
+            },
+            {
+                "Gene": "LRATD2",
+                "Coefficient": 0.9959692358970642,
+                "Importance": 0.9959692358970642
+            },
+            {
+                "Gene": "KLRG1",
+                "Coefficient": -0.9888097643852234,
+                "Importance": 0.9888097643852234
+            },
+            {
+                "Gene": "MALL",
+                "Coefficient": -0.979340136051178,
+                "Importance": 0.979340136051178
+            },
+            {
+                "Gene": "LINC00472",
+                "Coefficient": 0.9734053015708923,
+                "Importance": 0.9734053015708923
+            },
+            {
+                "Gene": "AFAP1L2",
+                "Coefficient": 0.9711160659790039,
+                "Importance": 0.9711160659790039
+            },
+            {
+                "Gene": "GRIA1",
+                "Coefficient": 0.9691566228866577,
+                "Importance": 0.9691566228866577
+            },
+            {
+                "Gene": "FREM2",
+                "Coefficient": 0.9345102310180664,
+                "Importance": 0.9345102310180664
+            },
+            {
+                "Gene": "CXCL12",
+                "Coefficient": 0.9202614426612854,
+                "Importance": 0.9202614426612854
+            },
+            {
+                "Gene": "HSPG2",
+                "Coefficient": 0.9162249565124512,
+                "Importance": 0.9162249565124512
+            }
+        ]
+    }
+]
