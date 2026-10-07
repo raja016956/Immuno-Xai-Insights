@@ -28,11 +28,6 @@ export default function(component) {
 
         return new Promise((resolve, reject) => {
 
-            if (window.tsParticles) {
-                resolve();
-                return;
-            }
-
             const script = document.createElement("script");
 
             script.src = src;
@@ -42,95 +37,130 @@ export default function(component) {
             script.onerror = reject;
 
             document.head.appendChild(script);
+
         });
+
     }
 
 
     async function createParticles() {
 
-        await loadScript(
-            "https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"
-        );
+        try {
 
-        await loadScript(
-            "https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"
-        );
-
-        await window.loadSlim(window.tsParticles);
+            await loadScript(
+                "https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"
+            );
 
 
-        await window.tsParticles.load({
+            await loadScript(
+                "https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"
+            );
 
-            id: "immunoxai-particles",
 
-            options: {
+            await window.loadSlim(
+                window.tsParticles
+            );
 
-                fullScreen: {
-                    enable: false
-                },
 
-                background: {
-                    color: "#071116"
-                },
+            await window.tsParticles.load({
 
-                fpsLimit: 40,
+                id: "immunoxai-particles",
 
-                particles: {
+                options: {
 
-                    number: {
-                        value: 55
+                    fullScreen: {
+                        enable: false
                     },
 
-                    color: {
-                        value: [
-                            "#40e0d0",
-                            "#b8ffff",
-                            "#ffffff"
-                        ]
+                    background: {
+                        color: "#071116"
                     },
 
-                    opacity: {
-                        value: 0.35
-                    },
+                    fpsLimit: 40,
 
-                    size: {
-                        value: {
-                            min: 1,
-                            max: 2.5
+
+                    particles: {
+
+                        number: {
+                            value: 55
+                        },
+
+
+                        color: {
+                            value: [
+                                "#40e0d0",
+                                "#b8ffff",
+                                "#ffffff"
+                            ]
+                        },
+
+
+                        opacity: {
+                            value: 0.35
+                        },
+
+
+                        size: {
+                            value: {
+                                min: 1,
+                                max: 5
+                            }
+                        },
+
+
+                        move: {
+
+                            enable: true,
+
+                            speed: 0.35,
+
+                            direction: "none",
+
+                            outModes: {
+                                default: "bounce"
+                            }
+
+                        },
+
+
+                        links: {
+
+                            enable: true,
+
+                            distance: 140,
+
+                            color: "#40e0d0",
+
+                            opacity: 0.18,
+
+                            width: 1
+
                         }
+
                     },
 
-                    move: {
 
-                        enable: true,
+                    detectRetina: true
 
-                        speed: 0.35,
+                }
 
-                        direction: "none",
+            });
 
-                        outModes: {
-                            default: "bounce"
-                        }
-                    },
 
-                    links: {
+            console.log(
+                "ImmunoXAI particles loaded"
+            );
 
-                        enable: true,
+        }
 
-                        distance: 140,
+        catch (error) {
 
-                        color: "#40e0d0",
+            console.error(
+                "ImmunoXAI particles failed:",
+                error
+            );
 
-                        opacity: 0.18,
-
-                        width: 1
-                    }
-                },
-
-                detectRetina: true
-            }
-
-        });
+        }
 
     }
 
@@ -140,15 +170,17 @@ export default function(component) {
 
     return () => {
 
-        const existing = document.getElementById(
-            "immunoxai-particles"
-        );
+        const existing =
+            document.getElementById(
+                "immunoxai-particles"
+            );
 
         if (existing) {
             existing.remove();
         }
 
     };
+
 }
 """
 
@@ -224,8 +256,8 @@ def apply_style():
             position: relative !important;
             z-index: 5 !important;
 
-            background: rgba(10, 14, 23, 0.55) !important;
-            background-color: rgba(10, 14, 23, 0.55) !important;
+            background: rgba(10, 14, 23, 5) !important;
+            background-color: rgba(10, 14, 23, 5) !important;
 
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
