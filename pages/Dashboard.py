@@ -139,7 +139,7 @@ if user:
     # ------------------------------------------------------------
 
     with col1:
-        with st.container(border=True):
+        with st.container(border=True, key="summary_card_1"):
 
             st.html(
                 f"""
@@ -181,7 +181,7 @@ if user:
     # ------------------------------------------------------------
 
     with col2:
-        with st.container(border=True):
+        with st.container(border=True, key="summary_card_2"):
 
             st.html(
             f"""
@@ -227,7 +227,7 @@ if user:
     # ------------------------------------------------------------
 
     with col3:
-        with st.container(border=True):
+        with st.container(border=True, key="summary_card_3"):
 
             st.html(
                 f"""
@@ -405,7 +405,7 @@ if user:
             # Report card
             # -----------------------------------------------------
 
-            with st.container(border=True):
+            with st.container(border=True, key="report_history"):
 
                 # Dataset name and date
                 st.html(

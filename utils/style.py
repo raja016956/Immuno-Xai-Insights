@@ -251,21 +251,24 @@ def apply_style():
         }
 
 
-        /* Glass containers */
-        [data-testid="stVerticalBlockBorderWrapper"] {
-            position: relative !important;
-            z-index: 5 !important;
+        /* DARK SUMMARY CARDS */
+        .st-key-summary_card_1,
+        .st-key-summary_card_2,
+        .st-key-summary_card_3,
+        .st-key-biological_interpretation,
+        .st-key-report_history_card,
+        .st-key-no_reports,
+        .st-key-upload_box,
+        .st-key-llm_interpretation,
+        .st-key-report_card,
+        .st-key-ai_interpretation
 
-            background: rgba(10, 14, 23, 5) !important;
-            background-color: rgba(10, 14, 23, 5) !important;
-
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            border-radius: 14px;
+        {
+            background: #050a10 !important;
+            border: 1px solid rgba(64, 224, 208, 0.18) !important;
+            border-radius: 14px !important;
         }
-                </style>
+                        </style>
         """,
         unsafe_allow_html=True
     )
