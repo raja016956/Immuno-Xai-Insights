@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+scipy
+scikit-learn
+scanpy
+plotly
+groq
+python-dotenv
+streamlit-firebase-auth

@@ -5,39 +5,45 @@ import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
 
+from utils.style import apply_style
+
 # 1. Page Configuration (Must be first)
 st.set_page_config(page_title="ImmunoXAI", layout="wide", initial_sidebar_state="expanded")
 
-# 2. Inject Custom CSS for Background and "Glassmorphism" Effects
-st.markdown(
-    """
-    <style>
-    /* Add a light, biological/network background image */
-    [data-testid="stAppViewContainer"] {
-        background-image: linear-gradient(rgba(10, 14, 23, 0.85), rgba(10, 14, 23, 0.95)), 
-                          url("https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2893&auto=format&fit=crop");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-    
-    /* Style the sidebar to match the dark theme */
-    [data-testid="stSidebar"] {
-        background-color: rgba(17, 24, 39, 0.7) !important;
-        backdrop-filter: blur(10px);
-        border-right: 1px solid rgba(64, 224, 208, 0.2);
-    }
+# Apply gloabl styles and VANTA animated background
+apply_style()
 
-    /* Custom turquoise header */
-    .glow-text {
-        color: #40e0d0;
-        text-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
-        font-weight: 600;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
+# # 2. Inject Custom CSS for Background and "Glassmorphism" Effects
+# st.markdown(
+#     """
+#     <style>
+#     /* Add a light, biological/network background image */
+#     [data-testid="stAppViewContainer"] {
+#         background-image: linear-gradient(rgba(10, 14, 23, 0.85), rgba(10, 14, 23, 0.95)), 
+#                           url("https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2893&auto=format&fit=crop");
+#         background-size: cover;
+#         background-position: center;
+#         background-attachment: fixed;
+#     }
+    
+#     /* Style the sidebar to match the dark theme */
+#     [data-testid="stSidebar"] {
+#         background-color: rgba(17, 24, 39, 0.7) !important;
+#         backdrop-filter: blur(10px);
+#         border-right: 1px solid rgba(64, 224, 208, 0.2);
+#     }
+
+#     /* Custom turquoise header */
+#     .glow-text {
+#         color: #40e0d0;
+#         text-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
+#         font-weight: 600;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 st.markdown('<h1 class="glow-text">ImmunoXAI</h1>', unsafe_allow_html=True)
 st.markdown('<p style="color: #94a3b8; font-size: 1.1rem; margin-top: -15px;">IMMUNOMICS PLATFORM</p>', unsafe_allow_html=True)

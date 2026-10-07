@@ -1,14 +1,5 @@
 import streamlit as st
-
-# st.image("https://www.svgrepo.com/show/449355/dna.svg").title("ImmunoXAI")
-
-# col1, col2 = st.columns(2)
-
-# sb1 = st.sidebar.text("Immuno Xai Platform")
-# sb1 = st.sidebar.header("Dashboard")
-# sb2 = st.sidebar.header("upload dataset")
-# sb2 = st.sidebar.header("Analysis")
-# sb1 = st.sidebar.header("Reports")
+from utils.style import apply_style
 
 
 dashboard_page = st.Page("pages/dashboard.py", title="Dashboard", icon=":material/dashboard:", default=True)
