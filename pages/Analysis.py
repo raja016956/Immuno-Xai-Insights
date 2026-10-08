@@ -9,10 +9,14 @@ import json
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
+from utils.style import apply_style
+
 
 # ============================================================
-# ANALYSIS PAGE STYLING
+# PAGE STYLING
 # ============================================================
+apply_style()
+
 
 st.markdown(
     """
@@ -464,12 +468,18 @@ stroke-linecap="round" stroke-linejoin="round">
 
 svg_cloud = '''
 <svg xmlns="http://www.w3.org/2000/svg"
-width="24" height="24" viewBox="0 0 24 24"
-fill="none" stroke="#40e0d0" stroke-width="2"
-stroke-linecap="round" stroke-linejoin="round">
-<path d="M17.5 19H9a7 7 0 1 1 6.71-9H17.5a5.5 5.5 0 0 1 0 11z"/>
-<polyline points="12 12 12 17"/>
-<polyline points="9 15 12 12 15 15"/>
+     width="24" height="24"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="#40e0d0"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <path d="M12 16V4"/>
+    <path d="M7 9L12 4L17 9"/>
+    <path d="M5 20H19"/>
+
 </svg>
 '''
 
@@ -523,7 +533,7 @@ with col_center:
     )
 
     # Transparent / light-black upload box
-    with st.container(border=True):
+    with st.container(border=True, key="upload_box"):
 
         st.html(
             f"""
@@ -539,7 +549,12 @@ with col_center:
         justify-content:center;
         margin-bottom:16px;
         box-shadow:0 4px 6px rgba(0,0,0,0.15);">
-        {svg_cloud}
+        <span style="
+            color:#0a0e17;
+            font-size:28px;
+            font-weight:700;
+            line-height:1;
+        ">↑</span>
     </div>
 
     <h4 style="
@@ -1592,7 +1607,7 @@ if "adata" in st.session_state:
         # Display the LLM interpretation
         # --------------------------------------------------------
 
-        with st.container(border=True):
+        with st.container(border=True, key="llm_interpretation"):
 
             st.markdown(
                 st.session_state["ai_interpretation"]

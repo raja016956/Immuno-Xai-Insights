@@ -349,7 +349,7 @@ if user:
         # Display every saved report
         # ---------------------------------------------------------
 
-        for report in reports:
+        for report_index, report in enumerate(reports):
 
             # -----------------------------------------------------
             # Basic report information
@@ -405,7 +405,10 @@ if user:
             # Report card
             # -----------------------------------------------------
 
-            with st.container(border=True, key="report_history"):
+            with st.container(
+                    border=True,
+                    key=f"report_history_card_{report_index}"
+                ):
 
                 # Dataset name and date
                 st.html(
@@ -490,7 +493,6 @@ if user:
                     "ai_interpretation",
                     ""
                 )
-
                 if interpretation:
 
                     st.markdown(
@@ -506,11 +508,11 @@ if user:
                         unsafe_allow_html=True
                     )
 
-                    with st.container(border=True):
-
-                        st.markdown(
-                            interpretation
-                        )
+                    with st.container(
+                        border=True,
+                        key=f"biological_interpretation_{report_index}"
+                    ):
+                        st.markdown(interpretation)
 
                 # -------------------------------------------------
                 # Additional report information
@@ -609,7 +611,7 @@ if user:
         # NO REPORTS YET
         # =========================================================
 
-        with st.container(border=True):
+        with st.container(border=True, key="no_reports"):
 
             st.markdown(
                 """

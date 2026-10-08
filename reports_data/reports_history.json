@@ -1,5 +1,119 @@
 [
     {
+        "created_at": "2026-10-08T06:33:25.479771",
+        "dataset_name": "GSE297652_expression_matrix_data.csv.gz",
+        "cells": 3030,
+        "inflamed": 758,
+        "immune_excluded": 758,
+        "accuracy": 0.9967105263157895,
+        "precision": 1.0,
+        "recall": 0.993421052631579,
+        "f1_score": 0.0,
+        "ai_interpretation": "- **Immune‑state distribution**: The cohort is evenly split between immune‑excluded and inflamed states (≈25 % each) with a larger intermediate group (≈50 %).  \n- **T‑cell and PD‑L1/myeloid scores**: Mean T‑cell and PD‑L1/myeloid scores are low (≈0.006 and 0.0056), suggesting a generally weak immune infiltration across the dataset.  \n- **Key model features**: High‑importance genes driving an inflamed signature are CD3E, CD3D, CXCR4, CCL5, and CD96, while immune‑excluded association is dominated by IFI30, LST1, TTC6, SGK1, and IFITM3.  \n- **Classifier performance**: The model achieves near‑perfect accuracy (99.7 %), precision (100 %), and recall (99.3 %), indicating strong predictive capability for immune‑state assignment.  \n- **Scientific limitation**: The extremely low mean immune scores and balanced state counts may reflect a limited dynamic range or batch effects; thus, the generalizability of these findings to other cohorts remains uncertain.",
+        "feature_importance": [
+            {
+                "Gene": "CD3E",
+                "Coefficient": 0.4564838707447052,
+                "Importance": 0.4564838707447052
+            },
+            {
+                "Gene": "CD3D",
+                "Coefficient": 0.3827193081378937,
+                "Importance": 0.3827193081378937
+            },
+            {
+                "Gene": "CXCR4",
+                "Coefficient": 0.27307024598121643,
+                "Importance": 0.27307024598121643
+            },
+            {
+                "Gene": "IFI30",
+                "Coefficient": -0.27087968587875366,
+                "Importance": 0.27087968587875366
+            },
+            {
+                "Gene": "LST1",
+                "Coefficient": -0.2328445315361023,
+                "Importance": 0.2328445315361023
+            },
+            {
+                "Gene": "CCL5",
+                "Coefficient": 0.2189795970916748,
+                "Importance": 0.2189795970916748
+            },
+            {
+                "Gene": "TTC6",
+                "Coefficient": -0.21820807456970215,
+                "Importance": 0.21820807456970215
+            },
+            {
+                "Gene": "CD96",
+                "Coefficient": 0.21535444259643555,
+                "Importance": 0.21535444259643555
+            },
+            {
+                "Gene": "SGK1",
+                "Coefficient": -0.20876146852970123,
+                "Importance": 0.20876146852970123
+            },
+            {
+                "Gene": "IFITM3",
+                "Coefficient": -0.20510326325893402,
+                "Importance": 0.20510326325893402
+            },
+            {
+                "Gene": "IL32",
+                "Coefficient": 0.19877377152442932,
+                "Importance": 0.19877377152442932
+            },
+            {
+                "Gene": "CD52",
+                "Coefficient": 0.19580776989459991,
+                "Importance": 0.19580776989459991
+            },
+            {
+                "Gene": "HSPB1",
+                "Coefficient": -0.19372707605361938,
+                "Importance": 0.19372707605361938
+            },
+            {
+                "Gene": "CD247",
+                "Coefficient": 0.1929176300764084,
+                "Importance": 0.1929176300764084
+            },
+            {
+                "Gene": "FYN",
+                "Coefficient": 0.18500758707523346,
+                "Importance": 0.18500758707523346
+            },
+            {
+                "Gene": "RASGEF1B",
+                "Coefficient": -0.1841423362493515,
+                "Importance": 0.1841423362493515
+            },
+            {
+                "Gene": "CD69",
+                "Coefficient": 0.18375752866268158,
+                "Importance": 0.18375752866268158
+            },
+            {
+                "Gene": "FCER1G",
+                "Coefficient": -0.17839860916137695,
+                "Importance": 0.17839860916137695
+            },
+            {
+                "Gene": "PTPRC",
+                "Coefficient": 0.1766672283411026,
+                "Importance": 0.1766672283411026
+            },
+            {
+                "Gene": "IL7R",
+                "Coefficient": 0.17302455008029938,
+                "Importance": 0.17302455008029938
+            }
+        ]
+    },
+    {
         "created_at": "2026-10-02T13:12:13.597854",
         "dataset_name": "GSM6957625_NSCLC_KRAS_6_sn_counts.csv.gz",
         "cells": 5791,

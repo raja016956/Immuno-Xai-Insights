@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 from pathlib import Path
+from utils.style import apply_style
 
 
 # ============================================================
@@ -16,42 +17,8 @@ st.set_page_config(
 # ============================================================
 # PAGE STYLING
 # ============================================================
+apply_style()
 
-st.markdown(
-    """
-    <style>
-
-    [data-testid="stAppViewContainer"] {
-        background-image:
-            linear-gradient(
-                rgba(10, 14, 23, 0.85),
-                rgba(10, 14, 23, 0.95)
-            ),
-            url(
-                "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2893&auto=format&fit=crop"
-            );
-
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-
-    [data-testid="stSidebar"] {
-        background-color: rgba(17, 24, 39, 0.7) !important;
-        backdrop-filter: blur(10px);
-        border-right: 1px solid rgba(64, 224, 208, 0.2);
-    }
-
-    .glow-text {
-        color: #40e0d0;
-        text-shadow:
-            0 0 10px rgba(64, 224, 208, 0.5);
-    }
-
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 
 # ============================================================
@@ -210,12 +177,12 @@ reports.sort(
 
 if not reports:
 
-    with st.container(border=True):
+    with st.container(border=True, key="no_reports"):
         st.info("No analysis reports have been generated yet.")
 
 else:
 
-    for report in reports:
+    for report_index, report in enumerate(reports):
 
         dataset_name = report.get(
             "dataset_name",
@@ -276,7 +243,7 @@ else:
         # REPORT CARD
         # --------------------------------------------------------
 
-        with st.container(border=True):
+        with st.container(border=True,key=f"report_card_{report_index}"):
 
             st.markdown(
                 f"""
@@ -370,7 +337,7 @@ else:
 
             if ai_interpretation:
 
-                with st.container(border=True):
+                with st.container(border=True,key=f"ai_interpretation_{report_index}"):
                     st.markdown(
                         ai_interpretation
                     )
